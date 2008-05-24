@@ -1,0 +1,3 @@
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\bin\DebugVersionControl\LastFM.exe.config
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\DebugVersionControl\Interop.iTunesLib.dll
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\DebugVersionControl\LastFM.csproj.ResolveComReference.cache

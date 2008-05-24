@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LastFM", "LastFM\LastFM.csproj", "{6CF7F645-859D-4D26-B0D8-85D44A75FCEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LastFMVersionControl", "LastFMVersionControl\LastFMVersionControl.csproj", "{79003380-14B8-4848-80AD-2DDED830B51F}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "LastFMSetup", "..\LastFMSetup\LastFMSetup\LastFMSetup.vdproj", "{BD9CB784-3F8E-41CE-9BCC-834CED5A38C8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6CF7F645-859D-4D26-B0D8-85D44A75FCEF} = {6CF7F645-859D-4D26-B0D8-85D44A75FCEF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LastFMUnitTesting", "LastFMUnitTesting\LastFMUnitTesting.csproj", "{FBD1099B-4768-41F5-A39B-87F94163FB29}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0549303F-FB12-4578-AE8C-95F331E38A13}"
+	ProjectSection(SolutionItems) = preProject
+		LastFM.vsmdi = LastFM.vsmdi
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = LastFM.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug (VersionControl)|Any CPU = Debug (VersionControl)|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CF7F645-859D-4D26-B0D8-85D44A75FCEF}.Debug (VersionControl)|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CF7F645-859D-4D26-B0D8-85D44A75FCEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CF7F645-859D-4D26-B0D8-85D44A75FCEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CF7F645-859D-4D26-B0D8-85D44A75FCEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CF7F645-859D-4D26-B0D8-85D44A75FCEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79003380-14B8-4848-80AD-2DDED830B51F}.Debug (VersionControl)|Any CPU.ActiveCfg = Debug|Any CPU
+		{79003380-14B8-4848-80AD-2DDED830B51F}.Debug (VersionControl)|Any CPU.Build.0 = Debug|Any CPU
+		{79003380-14B8-4848-80AD-2DDED830B51F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79003380-14B8-4848-80AD-2DDED830B51F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD9CB784-3F8E-41CE-9BCC-834CED5A38C8}.Debug (VersionControl)|Any CPU.ActiveCfg = Debug
+		{BD9CB784-3F8E-41CE-9BCC-834CED5A38C8}.Debug (VersionControl)|Any CPU.Build.0 = Debug
+		{BD9CB784-3F8E-41CE-9BCC-834CED5A38C8}.Debug|Any CPU.ActiveCfg = Debug
+		{BD9CB784-3F8E-41CE-9BCC-834CED5A38C8}.Release|Any CPU.ActiveCfg = Release
+		{BD9CB784-3F8E-41CE-9BCC-834CED5A38C8}.Release|Any CPU.Build.0 = Release
+		{FBD1099B-4768-41F5-A39B-87F94163FB29}.Debug (VersionControl)|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBD1099B-4768-41F5-A39B-87F94163FB29}.Debug (VersionControl)|Any CPU.Build.0 = Debug|Any CPU
+		{FBD1099B-4768-41F5-A39B-87F94163FB29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBD1099B-4768-41F5-A39B-87F94163FB29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBD1099B-4768-41F5-A39B-87F94163FB29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBD1099B-4768-41F5-A39B-87F94163FB29}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
