@@ -36,8 +36,16 @@ namespace LastFM
             _exitItem.Click += new EventHandler(_exitItem_Click);
             menu.MenuItems.Add(_exitItem);
 
+            MenuItem _showItem = new MenuItem("Show");
+            _showItem.Click += new EventHandler(_showItem_Click);
+
 
             _trayIcon.ContextMenu = menu;
+        }
+
+        static void _showItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You clicked on show.  Really testing Subversion");
         }
         static void _exitItem_Click(object sender, EventArgs e)
         {
