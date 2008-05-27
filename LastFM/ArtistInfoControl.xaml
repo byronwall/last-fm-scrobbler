@@ -1,0 +1,47 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="LastFM.ArtistInfoControl"
+	x:Name="UserControl"
+	Width="Auto" Height="Auto">
+
+	<UserControl.Resources>
+		<DataTemplate x:Key="itemArtistAlbum">
+			<Border Style="{DynamicResource borderPopupStyle}" Width="Auto" Height="Auto" BorderThickness="3,3,3,3" Background="{DynamicResource listItemBrush}">
+				<StackPanel Width="Auto" Height="Auto" Orientation="Horizontal">
+					<Image x:Name="imageAlbum" Width="50" Height="50" Source="{Binding Path=ImageURL}"/>
+					<TextBlock MinWidth="50" x:Name="txtAlbumName" Style="{DynamicResource txtListInfo}" Text="{Binding Path=Content}" TextWrapping="Wrap"/>
+				</StackPanel>
+			</Border>
+		</DataTemplate>
+		<DataTemplate x:Key="itemArtistSong">
+			<Border Style="{DynamicResource borderPopupStyle}" Width="Auto" Height="Auto" BorderThickness="1,1,1,1" CornerRadius="7.5,7.5,7.5,7.5" Background="{DynamicResource listItemBrush}">
+				<StackPanel Width="Auto" Height="Auto">
+					<TextBlock MinWidth="50" x:Name="txtSongName" Style="{DynamicResource txtListInfo}" Text="{Binding Path=Content}" TextWrapping="Wrap"/>
+				</StackPanel>
+			</Border>
+		</DataTemplate>
+	</UserControl.Resources>
+	<Border Style="{DynamicResource borderPopupStyle}" Width="Auto" Height="Auto" Background="{DynamicResource mainBackgroundBrush}">
+		<StackPanel Width="Auto" Height="Auto">
+			<Border x:Name="borderArtistHeaderaa" Style="{DynamicResource borderPopupStyle}" Width="Auto" Height="Auto">
+				<StackPanel x:Name="stackArtistHeader" Width="Auto" Height="Auto" Orientation="Horizontal">
+					<Image x:Name="imageArtist" Width="120" Height="120" Source="{Binding Path=ImageURL, ElementName=UserControl, Mode=Default}"/>
+					<TextBlock Cursor="Hand" x:Name="txtArtistName" Style="{DynamicResource artistInfoHeaderStyle}" FontSize="24" Text="{Binding Path=ArtistName, ElementName=UserControl, Mode=Default}" TextWrapping="Wrap" MouseUp="txtArtistName_MouseUp"/>
+				</StackPanel>
+			</Border>
+			<Border x:Name="borderArtistAlbums" Style="{DynamicResource borderPopupStyle}" Width="Auto" Height="Auto">
+				<StackPanel x:Name="stackArtistAlbums" Width="Auto" Height="Auto">
+					<TextBlock Style="{DynamicResource textHeaderStyle}" Text="top albums" TextWrapping="Wrap"/>
+					<ListBox x:Name="listArtistAlbums" Style="{DynamicResource listItemsStyle}" Height="Auto" IsSynchronizedWithCurrentItem="True" ItemTemplate="{DynamicResource itemArtistAlbum}" Width="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled" ItemsPanel="{DynamicResource ItemWrapPanelTemplate}"/>
+				</StackPanel>
+			</Border>
+			<Border x:Name="borderArtistSongs" Style="{DynamicResource borderPopupStyle}" Width="Auto" Height="Auto">
+				<StackPanel x:Name="stackArtistSongs" Width="Auto" Height="Auto">
+					<TextBlock Style="{DynamicResource textHeaderStyle}" Text="top songs" TextWrapping="Wrap" Width="Auto" Height="Auto"/>
+					<ListBox Height="100" IsSynchronizedWithCurrentItem="True" x:Name="listArtistSongs" Style="{DynamicResource listItemsStyle}" Width="Auto" ItemTemplate="{DynamicResource itemArtistSong}"/>
+				</StackPanel>
+			</Border>
+		</StackPanel>
+	</Border>
+</UserControl>
