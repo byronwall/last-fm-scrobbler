@@ -11,7 +11,11 @@ namespace LastFM
     class Tray
     {
         private static NotifyIcon _trayIcon = null;
-        
+
+        /// <summary>
+        /// Gets the tray icon.
+        /// </summary>
+        /// <value>The tray icon.</value>
         public static NotifyIcon TrayIcon{
        
             get
