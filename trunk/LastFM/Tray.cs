@@ -28,6 +28,9 @@ namespace LastFM
             }
         }
 
+        /// <summary>
+        /// Initializes this instance.
+        /// </summary>
         private static void Initialize()
         {
             _trayIcon = new NotifyIcon();
