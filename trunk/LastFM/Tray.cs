@@ -29,7 +29,7 @@ namespace LastFM
         }
 
         /// <summary>
-        /// Initializes this instance.
+        /// Initializes this instance and sets up the events.
         /// </summary>
         private static void Initialize()
         {
