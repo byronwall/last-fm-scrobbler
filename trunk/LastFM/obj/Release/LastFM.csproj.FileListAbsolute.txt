@@ -27,3 +27,32 @@ F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Release\LastFM.app
 F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Release\LastFM.exe
 F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Release\LastFM.pdb
 F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Release\CustomProgressBar.baml
+c:\temp\LastFM\LastFM\bin\Release\LastFM.exe.config
+c:\temp\LastFM\LastFM\bin\Release\LastFM.exe.manifest
+c:\temp\LastFM\LastFM\bin\Release\LastFM.application
+c:\temp\LastFM\LastFM\bin\Release\LastFM.exe
+c:\temp\LastFM\LastFM\bin\Release\LastFM.pdb
+c:\temp\LastFM\LastFM\bin\Release\Interop.iTunesLib.dll
+c:\temp\LastFM\LastFM\obj\Release\ResolveAssemblyReference.cache
+c:\temp\LastFM\LastFM\obj\Release\Interop.iTunesLib.dll
+c:\temp\LastFM\LastFM\obj\Release\LastFM.csproj.ResolveComReference.cache
+c:\temp\LastFM\LastFM\obj\Release\CustomHyperlink.baml
+c:\temp\LastFM\LastFM\obj\Release\CustomProgressBar.baml
+c:\temp\LastFM\LastFM\obj\Release\CustomHyperlink.g.cs
+c:\temp\LastFM\LastFM\obj\Release\SimilarArtists.g.cs
+c:\temp\LastFM\LastFM\obj\Release\UserInfoControl.g.cs
+c:\temp\LastFM\LastFM\obj\Release\Window1.g.cs
+c:\temp\LastFM\LastFM\obj\Release\GeneratedInternalTypeHelper.g.cs
+c:\temp\LastFM\LastFM\obj\Release\LastFM_MarkupCompile.cache
+c:\temp\LastFM\LastFM\obj\Release\LastFM_MarkupCompile.lref
+c:\temp\LastFM\LastFM\obj\Release\SimilarArtists.baml
+c:\temp\LastFM\LastFM\obj\Release\Styles.baml
+c:\temp\LastFM\LastFM\obj\Release\UserInfoControl.baml
+c:\temp\LastFM\LastFM\obj\Release\Window1.baml
+c:\temp\LastFM\LastFM\obj\Release\LastFM.g.resources
+c:\temp\LastFM\LastFM\obj\Release\LastFM.Properties.Resources.resources
+c:\temp\LastFM\LastFM\obj\Release\LastFM.csproj.GenerateResource.Cache
+c:\temp\LastFM\LastFM\obj\Release\LastFM.exe.manifest
+c:\temp\LastFM\LastFM\obj\Release\LastFM.application
+c:\temp\LastFM\LastFM\obj\Release\LastFM.exe
+c:\temp\LastFM\LastFM\obj\Release\LastFM.pdb

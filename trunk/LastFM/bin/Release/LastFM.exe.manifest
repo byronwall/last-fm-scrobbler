@@ -4,7 +4,7 @@
   <description asmv2:iconFile="trayIcon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="LastFM" version="1.2.8110.6870" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="LastFM" version="1.2.8153.297" language="neutral" processorArchitecture="msil" />
     <commandLine file="LastFM.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -65,14 +65,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LastFM.exe" size="118784">
-      <assemblyIdentity name="LastFM" version="1.2.8110.6870" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LastFM.exe" size="119808">
+      <assemblyIdentity name="LastFM" version="1.2.8153.297" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>mHBpSen4bE/A7cQTtN+CiJDMPsE=</dsig:DigestValue>
+        <dsig:DigestValue>kIQen5s6nP3tX1J2znd7tvzqcaY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

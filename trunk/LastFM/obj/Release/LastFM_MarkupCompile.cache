@@ -4,7 +4,7 @@
 winexe
 C#
 .cs
-F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Release\
+c:\temp\LastFM\LastFM\obj\Release\
 LastFM
 none
 false
@@ -15,3 +15,4 @@ TRACE
 19-1327098229
 161834493664
 CustomHyperlink.xaml;CustomProgressBar.xaml;SimilarArtists.xaml;Styles.xaml;UserInfoControl.xaml;Window1.xaml;
+

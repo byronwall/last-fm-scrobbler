@@ -1,6 +1,6 @@
 ﻿<Project DefaultTargets="Build" ToolsVersion="3.5" InitialTargets="ValidateSolutionConfiguration;ValidateToolsVersions" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_SolutionProjectConfiguration>Debug|Any CPU</_SolutionProjectConfiguration>
+    <_SolutionProjectConfiguration>Release|Any CPU</_SolutionProjectConfiguration>
     <_SolutionProjectToolsVersion>3.5</_SolutionProjectToolsVersion>
     <_SolutionProjectCacheVersion>3.5</_SolutionProjectCacheVersion>
   </PropertyGroup>
@@ -55,11 +55,11 @@
     <AspNetConfiguration>$(Configuration)</AspNetConfiguration>
   </PropertyGroup>
   <PropertyGroup>
-    <SolutionDir>F:\My Documents\Visual Studio 2008\Projects\LastFM\</SolutionDir>
+    <SolutionDir>c:\temp\LastFM\</SolutionDir>
     <SolutionExt>.sln</SolutionExt>
     <SolutionFileName>LastFM.sln</SolutionFileName>
     <SolutionName>LastFM</SolutionName>
-    <SolutionPath>F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM.sln</SolutionPath>
+    <SolutionPath>c:\temp\LastFM\LastFM.sln</SolutionPath>
   </PropertyGroup>
   <PropertyGroup>
     <TargetFrameworkVersion Condition="'$(TargetFrameworkVersion)' == '' and '$(MSBuildToolsVersion)' == '2.0'">v2.0</TargetFrameworkVersion>
@@ -156,24 +156,24 @@
     <Message Text="The project &quot;LastFMVersionControl&quot; is not selected for building in solution configuration &quot;Release|Any CPU&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
   </Target>
   <Target Name="LastFMSetup" DependsOnTargets="LastFM" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
-    <Warning Text="The project file &quot;..\LastFMSetup\LastFMSetup\LastFMSetup.vdproj&quot; is not supported by MSBuild and cannot be built." Code="MSB4078" HelpKeyword="MSBuild.SolutionParseUnknownProjectType" Condition=" ('$(Configuration)' == 'Debug %28VersionControl%29') and ('$(Platform)' == 'Any CPU') " />
+    <Warning Text="Error reading project file &quot;..\LastFMSetup\LastFMSetup\LastFMSetup.vdproj&quot;: Could not find a part of the path %27c:\temp\LastFMSetup\LastFMSetup\LastFMSetup.vdproj%27." Code="MSB4046" HelpKeyword="MSBuild.SolutionParseErrorReadingProject" Condition=" ('$(Configuration)' == 'Debug %28VersionControl%29') and ('$(Platform)' == 'Any CPU') " />
     <Message Text="The project &quot;LastFMSetup&quot; is not selected for building in solution configuration &quot;Debug|Any CPU&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
-    <Warning Text="The project file &quot;..\LastFMSetup\LastFMSetup\LastFMSetup.vdproj&quot; is not supported by MSBuild and cannot be built." Code="MSB4078" HelpKeyword="MSBuild.SolutionParseUnknownProjectType" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <Warning Text="Error reading project file &quot;..\LastFMSetup\LastFMSetup\LastFMSetup.vdproj&quot;: Could not find a part of the path %27c:\temp\LastFMSetup\LastFMSetup\LastFMSetup.vdproj%27." Code="MSB4046" HelpKeyword="MSBuild.SolutionParseErrorReadingProject" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
   </Target>
   <Target Name="LastFMSetup:Clean" DependsOnTargets="LastFM:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
-    <Warning Text="The project file &quot;..\LastFMSetup\LastFMSetup\LastFMSetup.vdproj&quot; is not supported by MSBuild and cannot be built." Code="MSB4078" HelpKeyword="MSBuild.SolutionParseUnknownProjectType" Condition=" ('$(Configuration)' == 'Debug %28VersionControl%29') and ('$(Platform)' == 'Any CPU') " />
+    <Warning Text="Error reading project file &quot;..\LastFMSetup\LastFMSetup\LastFMSetup.vdproj&quot;: Could not find a part of the path %27c:\temp\LastFMSetup\LastFMSetup\LastFMSetup.vdproj%27." Code="MSB4046" HelpKeyword="MSBuild.SolutionParseErrorReadingProject" Condition=" ('$(Configuration)' == 'Debug %28VersionControl%29') and ('$(Platform)' == 'Any CPU') " />
     <Message Text="The project &quot;LastFMSetup&quot; is not selected for building in solution configuration &quot;Debug|Any CPU&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
-    <Warning Text="The project file &quot;..\LastFMSetup\LastFMSetup\LastFMSetup.vdproj&quot; is not supported by MSBuild and cannot be built." Code="MSB4078" HelpKeyword="MSBuild.SolutionParseUnknownProjectType" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <Warning Text="Error reading project file &quot;..\LastFMSetup\LastFMSetup\LastFMSetup.vdproj&quot;: Could not find a part of the path %27c:\temp\LastFMSetup\LastFMSetup\LastFMSetup.vdproj%27." Code="MSB4046" HelpKeyword="MSBuild.SolutionParseErrorReadingProject" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
   </Target>
   <Target Name="LastFMSetup:Rebuild" DependsOnTargets="LastFM:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
-    <Warning Text="The project file &quot;..\LastFMSetup\LastFMSetup\LastFMSetup.vdproj&quot; is not supported by MSBuild and cannot be built." Code="MSB4078" HelpKeyword="MSBuild.SolutionParseUnknownProjectType" Condition=" ('$(Configuration)' == 'Debug %28VersionControl%29') and ('$(Platform)' == 'Any CPU') " />
+    <Warning Text="Error reading project file &quot;..\LastFMSetup\LastFMSetup\LastFMSetup.vdproj&quot;: Could not find a part of the path %27c:\temp\LastFMSetup\LastFMSetup\LastFMSetup.vdproj%27." Code="MSB4046" HelpKeyword="MSBuild.SolutionParseErrorReadingProject" Condition=" ('$(Configuration)' == 'Debug %28VersionControl%29') and ('$(Platform)' == 'Any CPU') " />
     <Message Text="The project &quot;LastFMSetup&quot; is not selected for building in solution configuration &quot;Debug|Any CPU&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
-    <Warning Text="The project file &quot;..\LastFMSetup\LastFMSetup\LastFMSetup.vdproj&quot; is not supported by MSBuild and cannot be built." Code="MSB4078" HelpKeyword="MSBuild.SolutionParseUnknownProjectType" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <Warning Text="Error reading project file &quot;..\LastFMSetup\LastFMSetup\LastFMSetup.vdproj&quot;: Could not find a part of the path %27c:\temp\LastFMSetup\LastFMSetup\LastFMSetup.vdproj%27." Code="MSB4046" HelpKeyword="MSBuild.SolutionParseErrorReadingProject" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
   </Target>
   <Target Name="LastFMSetup:Publish" DependsOnTargets="LastFM:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
-    <Warning Text="The project file &quot;..\LastFMSetup\LastFMSetup\LastFMSetup.vdproj&quot; is not supported by MSBuild and cannot be built." Code="MSB4078" HelpKeyword="MSBuild.SolutionParseUnknownProjectType" Condition=" ('$(Configuration)' == 'Debug %28VersionControl%29') and ('$(Platform)' == 'Any CPU') " />
+    <Warning Text="Error reading project file &quot;..\LastFMSetup\LastFMSetup\LastFMSetup.vdproj&quot;: Could not find a part of the path %27c:\temp\LastFMSetup\LastFMSetup\LastFMSetup.vdproj%27." Code="MSB4046" HelpKeyword="MSBuild.SolutionParseErrorReadingProject" Condition=" ('$(Configuration)' == 'Debug %28VersionControl%29') and ('$(Platform)' == 'Any CPU') " />
     <Message Text="The project &quot;LastFMSetup&quot; is not selected for building in solution configuration &quot;Debug|Any CPU&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
-    <Warning Text="The project file &quot;..\LastFMSetup\LastFMSetup\LastFMSetup.vdproj&quot; is not supported by MSBuild and cannot be built." Code="MSB4078" HelpKeyword="MSBuild.SolutionParseUnknownProjectType" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <Warning Text="Error reading project file &quot;..\LastFMSetup\LastFMSetup\LastFMSetup.vdproj&quot;: Could not find a part of the path %27c:\temp\LastFMSetup\LastFMSetup\LastFMSetup.vdproj%27." Code="MSB4046" HelpKeyword="MSBuild.SolutionParseErrorReadingProject" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
   </Target>
   <Target Name="LastFMUnitTesting" DependsOnTargets="LastFM" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(LastFMUnitTestingBuildOutput)">
     <MSBuild Projects="LastFMUnitTesting\LastFMUnitTesting.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug %28VersionControl%29') and ('$(Platform)' == 'Any CPU') ">

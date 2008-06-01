@@ -8,17 +8,17 @@
         <expiration maximumAge="0" unit="days" />
       </update>
     </subscription>
-    <deploymentProvider codebase="http://byron/LastFM/LastFM.application" />
+    <deploymentProvider codebase="http://laptop-byron/LastFM/LastFM.application" />
   </deployment>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="LastFM.exe.manifest" size="5053">
+    <dependentAssembly dependencyType="install" codebase="LastFM.exe.manifest" size="5051">
       <assemblyIdentity name="LastFM.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>uxYTbB6i+VXtPJ70oXHQh6p3MQM=</dsig:DigestValue>
+        <dsig:DigestValue>CpAqLx8Q2u2HbXK5sWyiRkQ1FFs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
