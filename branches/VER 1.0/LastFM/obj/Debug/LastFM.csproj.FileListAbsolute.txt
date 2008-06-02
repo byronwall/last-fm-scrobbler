@@ -1,0 +1,60 @@
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\ResolveAssemblyReference.cache
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\Window1.baml
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\Window1.g.cs
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\LastFM_MarkupCompile.cache
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\LastFM.g.resources
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\LastFM.Properties.Resources.resources
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\LastFM.csproj.GenerateResource.Cache
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\bin\Debug\LastFM.exe
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\bin\Debug\LastFM.pdb
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\LastFM.exe
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\LastFM.pdb
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\Interop.iTunesLib.dll
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\LastFM.csproj.ResolveComReference.cache
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\bin\Debug\Interop.iTunesLib.dll
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\bin\Debug\LastFM.exe.config
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\LastFM_MarkupCompile.lref
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\SimilarArtists.baml
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\SimilarArtists.g.cs
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\bin\Debug\LastFM.exe.manifest
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\bin\Debug\LastFM.application
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\LastFM.exe.manifest
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\LastFM.application
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\Styles.baml
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\UserInfoControl.baml
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\UserInfoControl.g.cs
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\bin\Debug\LastFM.exe.config
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\Interop.iTunesLib.dll
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\LastFM.csproj.ResolveComReference.cache
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\LastFM.exe
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\LastFM.pdb
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\bin\Debug\LastFM.exe.manifest
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\bin\Debug\LastFM.application
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\bin\Debug\LastFM.exe
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\bin\Debug\LastFM.pdb
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\bin\Debug\Interop.iTunesLib.dll
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\Hyperlink.baml
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\Simple Styles.baml
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\UserInfoControl.baml
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\App.baml
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\Hyperlink.g.cs
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\SimilarArtists.g.cs
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\UserInfoControl.g.cs
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\Window1.g.cs
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\App.g.cs
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\LastFM_MarkupCompile.cache
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\LastFM_MarkupCompile.lref
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\SimilarArtists.baml
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\Styles.baml
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\Window1.baml
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\LastFM.g.resources
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\LastFM.Properties.Resources.resources
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\LastFM.csproj.GenerateResource.Cache
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\LastFM.exe.manifest
+C:\Documents and Settings\Byron Wall\Desktop\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\LastFM.application
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\CustomHyperlink.baml
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\CustomHyperlink.g.cs
+F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFM\obj\Debug\CustomProgressBar.baml

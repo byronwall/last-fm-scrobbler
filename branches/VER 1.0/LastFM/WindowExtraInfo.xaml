@@ -1,0 +1,29 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="LastFM.WindowExtraInfo"
+	x:Name="Window"
+	Title="Similar Artists"
+	Width="640" Height="480" ShowInTaskbar="False" WindowStyle="ToolWindow">
+
+	<Window.Resources>
+		<DataTemplate x:Key="SimilarArtistTemplate">
+			<StackPanel>
+				<TextBlock Text="{Binding Path=Artist}" TextWrapping="Wrap"/>
+				<ListBox ItemTemplate="{DynamicResource ArtistTemplate}" ItemsSource="{Binding Path=Similars}" IsSynchronizedWithCurrentItem="True"/>
+			</StackPanel>
+		</DataTemplate>
+		<DataTemplate x:Key="ArtistTemplate">
+			<StackPanel Width="Auto" Height="Auto" Orientation="Horizontal">
+				<TextBlock Cursor="Hand" MinWidth="50" Width="Auto" Height="Auto" Text="{Binding Path=Artist}" TextWrapping="Wrap" MouseUp="TextBlock_MouseUp"/>
+			</StackPanel>
+		</DataTemplate>
+		<ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
+			<WrapPanel/>
+		</ItemsPanelTemplate>
+	</Window.Resources>
+
+	<Grid x:Name="LayoutRoot" Background="#FF3D3D3D">
+		<ListBox x:Name="lstSimilar" ItemTemplate="{DynamicResource SimilarArtistTemplate}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" IsSynchronizedWithCurrentItem="True" Margin="0,0,192,87" ItemsPanel="{DynamicResource ItemsPanelTemplate1}" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+	</Grid>
+</Window>
