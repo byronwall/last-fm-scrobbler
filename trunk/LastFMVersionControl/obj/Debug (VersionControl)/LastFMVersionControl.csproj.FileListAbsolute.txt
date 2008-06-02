@@ -1,3 +1,0 @@
-F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFMVersionControl\bin\Debug (VersionControl)\LastFMVersionControl.exe
-F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFMVersionControl\obj\Debug (VersionControl)\ResolveAssemblyReference.cache
-F:\My Documents\Visual Studio 2008\Projects\LastFM\LastFMVersionControl\obj\Debug (VersionControl)\LastFMVersionControl.exe
