@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LastFMClient", "LastFMClient\LastFMClient.csproj", "{B988746D-7DB0-4F46-B0DC-42B018C225F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LastFMCore", "LastFMCore\LastFMCore.csproj", "{B824DC62-F254-43FD-B9C2-8CA31029F2B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTunesCore", "iTunesCore\iTunesCore.csproj", "{53949378-8F36-4C7F-BF48-ADCDA90C65C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +11,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B988746D-7DB0-4F46-B0DC-42B018C225F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B988746D-7DB0-4F46-B0DC-42B018C225F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B988746D-7DB0-4F46-B0DC-42B018C225F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B988746D-7DB0-4F46-B0DC-42B018C225F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B824DC62-F254-43FD-B9C2-8CA31029F2B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B824DC62-F254-43FD-B9C2-8CA31029F2B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B824DC62-F254-43FD-B9C2-8CA31029F2B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B824DC62-F254-43FD-B9C2-8CA31029F2B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53949378-8F36-4C7F-BF48-ADCDA90C65C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53949378-8F36-4C7F-BF48-ADCDA90C65C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53949378-8F36-4C7F-BF48-ADCDA90C65C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53949378-8F36-4C7F-BF48-ADCDA90C65C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
