@@ -7,9 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTunesCore", "iTunesCore\iT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LastFMClient", "LastFMClient\LastFMClient.csproj", "{9427872B-6031-476E-9EFD-83053C3338D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.iTunesCore", "Test.iTunesCores\Test.iTunesCore.csproj", "{E8E43D12-9856-4CA4-BABB-EBE2273EF300}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.LastFMCore", "Test.LastFMCore\Test.LastFMCore.csproj", "{1159F275-E97B-4910-BC67-7A49EB85A934}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "Test.iTunesCores\UnitTests.csproj", "{E8E43D12-9856-4CA4-BABB-EBE2273EF300}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C39E741C-8BDF-4240-A4B3-AC9B214675EA}"
 	ProjectSection(SolutionItems) = preProject
@@ -48,12 +46,6 @@ Global
 		{E8E43D12-9856-4CA4-BABB-EBE2273EF300}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8E43D12-9856-4CA4-BABB-EBE2273EF300}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8E43D12-9856-4CA4-BABB-EBE2273EF300}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1159F275-E97B-4910-BC67-7A49EB85A934}.Build|Any CPU.ActiveCfg = Build|Any CPU
-		{1159F275-E97B-4910-BC67-7A49EB85A934}.Build|Any CPU.Build.0 = Build|Any CPU
-		{1159F275-E97B-4910-BC67-7A49EB85A934}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1159F275-E97B-4910-BC67-7A49EB85A934}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1159F275-E97B-4910-BC67-7A49EB85A934}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1159F275-E97B-4910-BC67-7A49EB85A934}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
