@@ -10,7 +10,7 @@
   <property name="src.dir" value="project"/>
   <property name="lib.dir" value="lib"/>
 
-  <property name="unittests.dll" value="ThoughtWorks.CruiseControl.UnitTests.dll"/>
+  <property name="unittests.dll" value="UnitTests.dll"/>
 
   <property name="nunit-console.exe" value="tools\nunit\nunit-console.exe" />
   <property name="ncover-console.exe" value="tools\ncover\NCover.Console.exe" />
@@ -59,6 +59,7 @@
     <loadtasks assembly="${nantcontrib.assembly}" />
     <msbuild project="project\LastFM.sln">
       <property name="Configuration" value="Build" />
+      <property name="Platform" value="Any CPU" />
     </msbuild>
   </target>
 
@@ -67,14 +68,25 @@
 
   <target name="test.unit" description="runs unit tests">
 
-    <property name="unittests.fullpath" value="${path::get-full-path(build.dir)}\unittests" />
+    <foreach item="File" property="filename">
+      <in>
+        <items>
+          <include name="build\unittests\*.dll"></include>
+        </items>
+      </in>
+      <do>
+        <exec program="${ncover-console.exe}" workingdir="${path::get-directory-name(filename)}" commandline="&quot;..\..\${nunit-console.exe}&quot; &quot;${filename}&quot; /xml:&quot;${project::get-base-directory()}\_nunit_${path::get-file-name-without-extension(filename)}.xml&quot; /nologo //x &quot;${project::get-base-directory()}\_ncover_${path::get-file-name-without-extension(filename)}.xml&quot;" failonerror="true"/>
+      </do>
+    </foreach>
+
+    <!--<property name="unittests.fullpath" value="${path::get-directory-name(unittests.dll)}" />
     <exec program="${ncover-console.exe}" workingdir="${unittests.fullpath}" commandline="//reg &quot;..\..\${nunit-console.exe}&quot; &quot;${unittests.fullpath}\${unittests.dll}&quot;  /xml:../${unittests.dll}-results.xml /nologo //w ${unittests.fullpath}"/>
 
     <ncoverexplorer program="tools\ncoverexplorer\ncoverexplorer.console.exe" projectName="LastFM" outputDir="${build.dir}" satisfactoryCoverage="80" reportType="4" xmlReportName="CoverageSummary.xml">
       <fileset>
         <include name="${unittests.fullpath}\coverage.xml" />
       </fileset>
-    </ncoverexplorer>
+    </ncoverexplorer>-->
   </target>
 
   <target name="createAssemblyInfo" description="Create an assembly info file with the current build number" >
