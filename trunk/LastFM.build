@@ -1,0 +1,320 @@
+<?xml version="1.0"?>
+
+<project name="ccnet" default="test" xmlns="http://nant.sf.net/release/0.85/nant.xsd">
+
+  <!-- PROPERTIES -->
+  <property name="debug" value="true"/>
+  <property name="verbosity" value="true"/>
+
+  <property name="build.dir" value="build"/>
+  <property name="src.dir" value="project"/>
+  <property name="lib.dir" value="lib"/>
+  <property name="package.dir" value="package"/>
+  <property name="webdashboard.dir" value="deployed\webdashboard"/>
+
+  <property name="remote.dll" value="ThoughtWorks.CruiseControl.Remote.dll"/>
+  <property name="core.dll" value="ThoughtWorks.CruiseControl.Core.dll"/>
+  <property name="webdashboard.dll" value="ThoughtWorks.CruiseControl.WebDashboard.dll"/>
+  <property name="unittests.dll" value="ThoughtWorks.CruiseControl.UnitTests.dll"/>
+  <property name="MSBuildLogger.dll" value="ThoughtWorks.CruiseControl.MSBuild.dll"/>
+  <property name="console.exe" value="ccnet.exe"/>
+  <property name="service.exe" value="ccservice.exe"/>
+  <property name="cctray.exe" value="cctray.exe"/>
+  <property name="nunit-console.exe" value="tools\nunit\nunit-console.exe" />
+  <property name="ncover-console.exe" value="tools\ncover\NCover.Console.exe" />
+  <property name="nantcontrib.assembly" value="tools\nant\contrib\NAnt.Contrib.Tasks.dll" />
+  <property name="vil.executable" value="tools\vil\vil.exe" />
+  <property name="vil.assemblies" value="comma,separated,list,of,assemblies,to,analyze (full path)" />
+  <property name="simian.executable" value="tools\simian\simian-2.2.17.exe" />
+  <property name="CCNetLabel" value="0" overwrite="false" />
+  <property name="CCNetArtifactDirectory" value="${build.dir}" overwrite="false" />
+
+  <target name="all" depends="clean, compile, test, deploy, dist"/>
+
+  <target name="clean" description="cleans up everything">
+    <delete dir="${build.dir}" if="${directory::exists(build.dir)}"/>
+    <delete dir="deployed" if="${directory::exists('deployed')}"/>
+    <delete dir="dist" if="${directory::exists('dist')}"/>
+  </target>
+
+  <target name="clean-vs" description="Delete Visual Studio artifacts">
+    <!-- NB - this target will likely fail if you have the solution open in Visual Studio -->
+    <foreach item="File" property="filename">
+      <in>
+        <items basedir="project">
+          <include name="*.suo" />
+          <include name="*.resharperoptions" />
+          <include name="*\*.user" />
+        </items>
+      </in>
+      <do>
+        <delete file="${filename}" />
+      </do>
+    </foreach>
+    <foreach item="Folder" property="foldername">
+      <in>
+        <items basedir="project">
+          <include name="*\bin" />
+          <include name="*\obj" />
+          <!-- can't seem to pick this up using a wild card -->
+          <include name="_ReSharper.ccnet" />
+        </items>
+      </in>
+      <do>
+        <delete dir="${foldername}" />
+      </do>
+    </foreach>
+  </target>
+
+  <target name="init" description="initial compilation setup">
+    <mkdir dir="${build.dir}" verbose="${verbosity}"/>
+  </target>
+
+  <!-- COMPILE -->
+  <target name="compile" depends="init" description="compiles everything to be released">
+    <loadtasks assembly="${nantcontrib.assembly}" />
+    <msbuild project="project\ccnet.sln">
+      <property name="Configuration" value="Build" />
+    </msbuild>
+
+    <!-- <solution configuration="build" solutionfile="project\ccnet.sln" /> -->
+    <copy file="${src.dir}\console\app.config" tofile="${build.dir}\server\${console.exe}.config" verbose="${verbosity}"/>
+    <copy file="${src.dir}\service\app.config" tofile="${build.dir}\service\${service.exe}.config" verbose="${verbosity}"/>
+    <copy file="${src.dir}\service\ccnet.config" tofile="${build.dir}\service\ccnet.config" verbose="${verbosity}"/>
+  </target>
+
+  <!-- TEST -->
+  <target name="test" depends="compile, test.unit" />
+
+  <target name="test.unit" description="runs unit tests">
+    <property name="unittests.fullpath" value="${path::get-full-path(build.dir)}\unittests" />
+    <exec program="${ncover-console.exe}" workingdir="${unittests.fullpath}" commandline="//reg &quot;..\..\${nunit-console.exe}&quot; &quot;${unittests.fullpath}\${unittests.dll}&quot;  /xml:../${unittests.dll}-results.xml /nologo //w ${unittests.fullpath}"/>
+
+    <ncoverexplorer program="tools\ncoverexplorer\ncoverexplorer.console.exe" projectName="CCNet" outputDir="${build.dir}" satisfactoryCoverage="80" reportType="4" xmlReportName="CoverageSummary.xml">
+      <fileset>
+        <include name="${unittests.fullpath}\coverage.xml" />
+      </fileset>
+    </ncoverexplorer>
+  </target>
+
+  <!-- DEPLOY -->
+
+  <target name="deploy" depends="compile, deploy.server, deploy.cctray, deploy.webdashboard" />
+
+  <target name="deploy.server" depends="compile">
+    <mkdir dir="deployed\server"/>
+    <copy todir="deployed\server" verbose="${verbosity}">
+      <fileset basedir="${build.dir}\server">
+        <include name="**\*" />
+        <exclude name="**\*.pdb" />
+
+        <exclude name="**\*.incr" />
+        <exclude name="**\PostBuildEvent.bat" />
+      </fileset>
+    </copy>
+
+    <!-- deliberately copied into same folder as server -->
+    <copy todir="deployed\server" verbose="${verbosity}">
+      <fileset basedir="${build.dir}\service">
+        <include name="**\*" />
+
+        <exclude name="**\*.pdb" />
+        <exclude name="**\*.incr" />
+        <exclude name="**\PostBuildEvent.bat" />
+      </fileset>
+    </copy>
+
+    <!-- deliberately copied into same folder as server -->
+    <copy file="${lib.dir}\${MSBuildLogger.dll}" todir="deployed\server" verbose="${verbosity}" />
+
+    <copy todir="deployed\server\xsl" verbose="${verbosity}">
+      <fileset basedir="${src.dir}\xsl">
+        <include name="**\*.xsl"/>
+        <include name="**\*.css"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="deploy.cctray">
+    <mkdir dir="deployed\cctray" />
+
+    <copy todir="deployed\cctray">
+      <fileset basedir="${build.dir}\cctray">
+        <include name="**\*" />
+
+        <exclude name="**\*.pdb" />
+        <exclude name="**\*.incr" />
+        <exclude name="**\PostBuildEvent.bat" />
+      </fileset>
+    </copy>
+
+    <copy todir="deployed\cctray">
+      <fileset basedir="project\cctray\Audio">
+        <include name="*" />
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="deploy.webdashboard" description="deploys the web dashboard application">
+    <mkdir dir="${webdashboard.dir}" verbose="${verbosity}"/>
+    <copy todir="${webdashboard.dir}\bin">
+      <fileset basedir="${build.dir}\webdashboard">
+        <include name="**\*" />
+
+        <exclude name="**\*.pdb" />
+        <exclude name="**\*.incr" />
+        <exclude name="**\PostBuildEvent.bat" />
+      </fileset>
+    </copy>
+    <copy todir="${webdashboard.dir}">
+      <fileset basedir="project\webdashboard">
+        <include name="**\*.aspx"/>
+        <include name="**\*.ascx"/>
+        <include name="**\*.asax"/>
+        <include name="**\*.config"/>
+        <include name="**\*.css"/>
+        <include name="**\*.gif"/>
+        <include name="**\*.html"/>
+        <include name="**\*.jpg"/>
+        <include name="**\*.jpeg"/>
+        <include name="**\*.js" />
+        <include name="**\*.vm" />
+        <include name="**\*.wav"/>
+        <include name="**\*.xsl"/>
+
+        <exclude name="bin\**\*" />
+        <exclude name="obj\**\*" />
+        <exclude name="test\**\*" />
+      </fileset>
+    </copy>
+  </target>
+
+  <!-- CREATE DISTRIBUTABLES -->
+  <target name="dist" depends="deploy">
+    <copy todir="deployed" file="license.txt" />
+    <copy todir="${webdashboard.dir}\doc">
+      <fileset basedir="doc">
+        <include name="**\*" />
+      </fileset>
+    </copy>
+    <copy todir="deployed\examples">
+      <fileset basedir="project/examples">
+        <include name="**\*" />
+      </fileset>
+    </copy>
+
+    <mkdir dir="dist"/>
+
+    <exec program="tools\NSIS\makensis.exe" commandline="cctray.nsi" />
+    <copy todir="${webdashboard.dir}\cctray">
+      <fileset basedir="dist">
+        <include name="*CCTray*.exe" />
+      </fileset>
+    </copy>
+
+    <zip zipfile="dist\CruiseControl.NET-${CCNetLabel}.zip">
+      <fileset basedir="deployed">
+        <include name="**\*" />
+      </fileset>
+    </zip>
+
+    <zip zipfile="dist\CruiseControl.NET-${CCNetLabel}.source.zip">
+      <fileset>
+        <include name="**\*" />
+        <exclude name="build.txt" />
+        <exclude name="build\**" />
+        <exclude name="deployed\**" />
+        <exclude name="dist\**" />
+        <exclude name="**\bin\**" />
+        <exclude name="**\obj\**" />
+        <exclude name="**\CVS\**" />
+        <exclude name="**\_Resharper*\**" />
+      </fileset>
+    </zip>
+    <exec program="tools\NSIS\makensis.exe" commandline="ccnet.nsi" />
+  </target>
+
+  <!-- FOR RUNNING CCNET AGAINST ITSELF -->
+  <target name="dist.publish" depends="dist">
+
+    <property name="publish.dir" value="${CCNetArtifactDirectory}\${CCNetLabel}" />
+
+    <mkdir dir="${publish.dir}" />
+    <copy todir="${publish.dir}">
+      <fileset basedir="dist">
+        <include name="*"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="createAssemblyInfo" description="Create an assembly info file with the current build number" >
+    <asminfo output="project/CommonAssemblyInfo.cs" language="CSharp">
+      <imports>
+        <import namespace="System.Reflection" />
+      </imports>
+      <attributes>
+        <attribute type="AssemblyVersionAttribute" value="${CCNetLabel}" />
+        <attribute type="AssemblyCopyrightAttribute" value="Copyright © 2008 ThoughtWorks Inc." />
+        <attribute type="AssemblyCompanyAttribute" value="ThoughtWorks" />
+        <attribute type="AssemblyProductAttribute" value="CruiseControl.NET" />
+      </attributes>
+    </asminfo>
+  </target>
+
+  <target name="ContinuousIntegration" depends="createAssemblyInfo, all, dist.publish, reporting">
+    <echo message="CI Run for build number ${CCNetLabel} successfully completed" />
+  </target>
+
+  <target name="netreflector.docs" depends="compile">
+    <loadtasks assembly="lib\NetReflectorDocumenterTask.dll"/>
+    <netreflector assembly="${build.dir}\core\${core.dll}" />
+  </target>
+
+  <target name="reporting" depends="compile, fxcop, vil, simian" />
+
+  <target name="fxcop">
+    <mkdir dir="build\fxcop" />
+    <exec program="tools\fxcop\fxcopcmd.exe"
+			  commandline="/p:tools\fxcop\ccnet.fxcop /o:build\fxcop\ccnet-fxcop.xml /s" failonerror="false"/>
+  </target>
+
+  <target name="vil">
+    <exec program="${vil.executable}"
+			workingdir="${build.dir}\webdashboard"
+			commandline='/a="${remote.dll},${core.dll},${webdashboard.dll}" /outxml="../ccnet.results-vil.xml"  /m classes,enumerations,structs,types,LOC,events,impInterfaces,WMC,DIT,CBO,RFC,NOC,constructors,methods,imps,fields,properties /sc=type'
+			failonerror="false"/>
+  </target>
+
+  <target name="simian" description="runs simian">
+    <exec program="${simian.executable}">
+      <arg value="-formatter=xml:${build.dir}\ccnet.simian-results.xml"/>
+      <arg value="-failOnDuplication-"/>
+      <arg value="project\core\**\*.cs"/>
+    </exec>
+    <tstamp/>
+    <echo message="Simian run complete"/>
+  </target>
+
+  <target name="msbuild">
+    <property name="nant.settings.currentframework" value="net-2.0"/>
+
+    <csc target="library" output="${build.dir}/ThoughtWorks.CruiseControl.MsBuild.XmlLogger.dll" debug="${debug}">
+      <sources basedir=".">
+        <include name="${src.dir}/MsBuildXmlLogger/**/*.cs"/>
+      </sources>
+      <references>
+        <include name="Microsoft.Build.Framework.dll"/>
+        <include name="Microsoft.Build.Utilities.dll"/>
+      </references>
+    </csc>
+  </target>
+
+  <target name="clean.cvs" description="deletes all backed up merge files from cvs">
+    <delete>
+      <fileset>
+        <include name="**/#.*.*" />
+      </fileset>
+    </delete>
+  </target>
+
+</project>
