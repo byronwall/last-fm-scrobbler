@@ -8,9 +8,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("iTunesCore")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("iTunesCore")]
-[assembly: AssemblyCopyright("Copyright ©  2008")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

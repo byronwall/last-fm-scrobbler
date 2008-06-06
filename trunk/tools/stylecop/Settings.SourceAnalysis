@@ -1,0 +1,27 @@
+<SourceAnalysisSettings Version="4.2">
+  <Analyzers>
+    <Analyzer AnalyzerId="Microsoft.SourceAnalysis.CSharp.DocumentationRules">
+      <Rules>
+        <Analyzer AnalyzerId="Microsoft.SourceAnalysis.CSharp.NamingRules">
+          <AnalyzerSettings>
+            <CollectionProperty Name="Hungarian">
+              <Value>as</Value>
+              <Value>do</Value>
+              <Value>id</Value>
+              <Value>if</Value>
+              <Value>in</Value>
+              <Value>is</Value>
+              <Value>my</Value>
+              <Value>no</Value>
+              <Value>on</Value>
+              <Value>to</Value>
+              <Value>ui</Value>
+            </CollectionProperty>
+          </AnalyzerSettings>
+        </Analyzer>
+      </Rules>
+      <AnalyzerSettings>
+      </AnalyzerSettings>
+    </Analyzer>
+  </Analyzers>
+</SourceAnalysisSettings>
