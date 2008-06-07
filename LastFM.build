@@ -7,6 +7,7 @@
   <property name="verbosity" value="true"/>
 
   <property name="build.dir" value="build"/>
+  
   <property name="src.dir" value="project"/>
   <property name="lib.dir" value="lib"/>
 
@@ -71,11 +72,12 @@
     <foreach item="File" property="filename">
       <in>
         <items>
-          <include name="build\unittests\*.dll"></include>
+          <include name="build\unittests\*.dll" />
+          <exclude name="build\unittests\*nunit*"/>
         </items>
       </in>
       <do>
-        <exec program="${ncover-console.exe}" workingdir="${path::get-directory-name(filename)}" commandline="&quot;..\..\${nunit-console.exe}&quot; &quot;${filename}&quot; /xml:&quot;${project::get-base-directory()}\_nunit_${path::get-file-name-without-extension(filename)}.xml&quot; /nologo //x &quot;${project::get-base-directory()}\_ncover_${path::get-file-name-without-extension(filename)}.xml&quot;" failonerror="true"/>
+        <exec program="${ncover-console.exe}" workingdir="${path::get-directory-name(filename)}" commandline="//reg &quot;..\..\${nunit-console.exe}&quot; &quot;${filename}&quot; /xml:&quot;${project::get-base-directory()}\_nunit_${path::get-file-name-without-extension(filename)}.xml&quot; /nologo //x &quot;${project::get-base-directory()}\_ncover_${path::get-file-name-without-extension(filename)}.xml&quot;" failonerror="true"/>
       </do>
     </foreach>
 
