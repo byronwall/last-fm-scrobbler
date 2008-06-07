@@ -2,11 +2,12 @@
 
 <project name="LastFM" default="all" xmlns="http://nant.sf.net/release/0.85/nant.xsd">
 
+
   <!-- PROPERTIES -->
   <property name="debug" value="true"/>
   <property name="verbosity" value="true"/>
 
-  <property name="build.dir" value="build"/>
+  <property name="build.dir" value="${project::get-base-directory()}\build"/>
   
   <property name="src.dir" value="project"/>
   <property name="lib.dir" value="lib"/>
@@ -15,6 +16,7 @@
 
   <property name="nunit-console.exe" value="tools\nunit\nunit-console.exe" />
   <property name="ncover-console.exe" value="tools\ncover\NCover.Console.exe" />
+  <property name="ncoverexplorer.exe" value="tools\ncoverexplorer\NCoverExplorer.Console.exe"/>
   <property name="nantcontrib.assembly" value="tools\nant\contrib\NAnt.Contrib.Tasks.dll" />
   <property name="CCNetLabel" value="1.0.0.0" overwrite="false" />
   <property name="CCNetArtifactDirectory" value="${build.dir}" overwrite="false" />
@@ -77,9 +79,17 @@
         </items>
       </in>
       <do>
-        <exec program="${ncover-console.exe}" workingdir="${path::get-directory-name(filename)}" commandline="//reg &quot;..\..\${nunit-console.exe}&quot; &quot;${filename}&quot; /xml:&quot;${project::get-base-directory()}\_nunit_${path::get-file-name-without-extension(filename)}.xml&quot; /nologo //x &quot;${project::get-base-directory()}\_ncover_${path::get-file-name-without-extension(filename)}.xml&quot;" failonerror="true"/>
+        <exec program="${ncover-console.exe}" workingdir="${path::get-directory-name(filename)}" commandline="//reg &quot;..\..\${nunit-console.exe}&quot; &quot;${filename}&quot; /xml:&quot;${project::get-base-directory()}\build\_nunit_${path::get-file-name-without-extension(filename)}.xml&quot; /nologo //x &quot;${project::get-base-directory()}\build\_ncover_${path::get-file-name-without-extension(filename)}.xml&quot;" failonerror="true"/>
       </do>
     </foreach>
+    <exec program="${ncoverexplorer.exe}" workingdir="${project::get-base-directory()}">
+      <arg value="${build.dir}\_ncover_*.xml" />
+      <arg value="/r:5"/>
+      <arg value="/x:${build.dir}\_CoverageReport.xml" />
+      <arg value="/e" />
+      <arg value="/p:LastFM" />
+      <arg value="/m:85" />
+    </exec>
 
     <!--<property name="unittests.fullpath" value="${path::get-directory-name(unittests.dll)}" />
     <exec program="${ncover-console.exe}" workingdir="${unittests.fullpath}" commandline="//reg &quot;..\..\${nunit-console.exe}&quot; &quot;${unittests.fullpath}\${unittests.dll}&quot;  /xml:../${unittests.dll}-results.xml /nologo //w ${unittests.fullpath}"/>
