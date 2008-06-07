@@ -21,7 +21,7 @@
   <property name="CCNetLabel" value="1.0.0.0" overwrite="false" />
   <property name="CCNetArtifactDirectory" value="${build.dir}" overwrite="false" />
 
-  <target name="all" depends="clean,createAssemblyInfo, compile, test, reporting"/>
+  <target name="all" depends="clean,createAssemblyInfo, compile, test"/>
 
   <target name="clean" description="cleans up everything">
     <delete dir="${build.dir}" if="${directory::exists(build.dir)}"/>
@@ -118,14 +118,4 @@
   <target name="ContinuousIntegration" depends="createAssemblyInfo, all, reporting">
     <echo message="CI Run for build number ${CCNetLabel} successfully completed" />
   </target>
-
-  <target name="reporting" depends="compile" />
-
-  <!--BELOW THIS POINT IS NOT CALLED AT THE MOMENT-->
-  <target name="fxcop">
-    <mkdir dir="build\fxcop" />
-    <exec program="tools\fxcop\fxcopcmd.exe"
-			  commandline="/p:tools\fxcop\LastFM.fxcop /o:build\fxcop\ccnet-fxcop.xml /s" failonerror="false"/>
-  </target>
-
 </project>
