@@ -59,10 +59,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\CommonAssemblyInfo.cs">
-      <Link>CommonAssemblyInfo.cs</Link>
+      <Link>Core\CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Class1.cs" />
-    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Core\AssemblyInfo.cs" />
+    <Compile Include="DatabaseTests\TestiTunesDatabaseWithFile.cs" />
+    <Compile Include="DatabaseTests\TestiTunesDatabase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iTunesCore\iTunesCore.csproj">
+      <Project>{53949378-8F36-4C7F-BF48-ADCDA90C65C3}</Project>
+      <Name>iTunesCore</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
