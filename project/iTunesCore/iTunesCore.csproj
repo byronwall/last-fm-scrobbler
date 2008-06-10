@@ -39,6 +39,10 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Interop.iTunesLib, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Interop.iTunesLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -54,13 +58,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\CommonAssemblyInfo.cs">
-      <Link>CommonAssemblyInfo.cs</Link>
+      <Link>Core\CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Class1.cs" />
-    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Database\DatabaseTrack.cs" />
+    <Compile Include="Database\IITunesDatabaseProvider.cs" />
+    <Compile Include="IITunesProvider.cs" />
+    <Compile Include="Database\iTunesDatabase.cs" />
+    <Compile Include="Database\ITunesDatabaseProviderFromFile.cs" />
+    <Compile Include="iTunesInstance.cs" />
+    <Compile Include="Core\AssemblyInfo.cs" />
+    <Compile Include="Manager\iTunesDatabaseChangeEventArgs.cs" />
+    <Compile Include="Manager\ITunesManager.cs" />
+    <Compile Include="iTunesProvider.cs" />
+    <Compile Include="Manager\iTunesPlayChangeEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="iTunesCoreDiagram.cd" />
+    <None Include="Core\iTunesCoreDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
