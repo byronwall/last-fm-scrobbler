@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace iTunesCore.Manager
 {
-    class iTunesDatabaseChangeEventArgs : EventArgs
+    public class iTunesDatabaseChangeEventArgs : EventArgs
     {
         public readonly List<DatabaseTrack> TracksChanged;
 

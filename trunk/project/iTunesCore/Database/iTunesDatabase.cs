@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
+using iTunesLib;
 
 namespace iTunesCore
 {
@@ -68,19 +69,33 @@ namespace iTunesCore
             this.State = DatabaseState.Loaded;
         }
 
-        public int RetrieveOrAddPlayCount(DatabaseTrack track)
+        /// <summary>
+        /// Analyzes the internal database to see if the track that is being checked has a different play count than the track in the database.  If there is a difference, then the track is updated in the database and the difference in play count is returned.
+        /// </summary>
+        /// <param name="track">The track to be checked.</param>
+        /// <returns>
+        /// The difference in play count between the two songs.
+        /// </returns>
+        public int RetrieveOrAddPlayCount(ref DatabaseTrack track)
         {
-            int playcount;
+            int databasePlayCount;
             if (Tracks.ContainsKey(track.Filename))
             {
-                playcount = Tracks[track.Filename];
+                databasePlayCount = Tracks[track.Filename];
+                Tracks[track.Filename] = track.PlayCount;
             }
             else
             {
                 Tracks.Add(track.Filename, track.PlayCount);
-                playcount = track.PlayCount;
+                databasePlayCount = track.PlayCount;
             }
-            return playcount;
+            track.NewPlays = track.PlayCount - databasePlayCount;
+            return track.NewPlays;
+        }
+
+        public int GetPlayCount(ref DatabaseTrack track)
+        {
+            return Tracks[track.Filename];
         }
     }
 

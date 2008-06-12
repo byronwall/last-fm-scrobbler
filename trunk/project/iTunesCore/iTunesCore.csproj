@@ -71,6 +71,7 @@
     <Compile Include="Manager\ITunesManager.cs" />
     <Compile Include="iTunesProvider.cs" />
     <Compile Include="Manager\iTunesPlayChangeEventArgs.cs" />
+    <Compile Include="Manager\PlayingSong.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Core\iTunesCoreDiagram.cd" />
