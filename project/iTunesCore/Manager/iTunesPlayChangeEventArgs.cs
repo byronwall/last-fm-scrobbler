@@ -3,19 +3,19 @@ using iTunesLib;
 
 namespace iTunesCore.Manager
 {
-    class iTunesPlayChangeEventArgs: EventArgs
+    public class iTunesPlayChangeEventArgs: EventArgs
     {
-        public readonly iTunesSongChangeType ChangeType;
+        public readonly ITunesSongChangeType ChangeType;
         public readonly IITFileOrCDTrack ChangedTrack;
 
-        public iTunesPlayChangeEventArgs(iTunesSongChangeType changeType, IITFileOrCDTrack changedTrack)
+        public iTunesPlayChangeEventArgs(ITunesSongChangeType changeType, IITFileOrCDTrack changedTrack)
         {
             ChangeType = changeType;
             ChangedTrack = changedTrack;
         }
     }
 
-    internal enum iTunesSongChangeType
+    public enum ITunesSongChangeType
     {
         Play, Pause, Stop
     }
