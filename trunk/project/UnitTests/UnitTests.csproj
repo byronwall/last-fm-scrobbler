@@ -64,6 +64,8 @@
     <Compile Include="Core\AssemblyInfo.cs" />
     <Compile Include="DatabaseTests\TestiTunesDatabaseWithFile.cs" />
     <Compile Include="DatabaseTests\TestiTunesDatabase.cs" />
+    <Compile Include="DatabaseTests\TestReference.cs" />
+    <Compile Include="ITunesTests\TestPlayingSong.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\iTunesCore\iTunesCore.csproj">

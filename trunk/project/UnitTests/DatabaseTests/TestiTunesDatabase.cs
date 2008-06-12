@@ -52,10 +52,10 @@ namespace UnitTests
         [Test]
         public void RetrieveExistingPlayCount()
         {
-            DatabaseTrack track = new DatabaseTrack(){Filename = __filename, PlayCount = __playcount};
-            int playCount = database.RetrieveOrAddPlayCount(track);
+            DatabaseTrack track = new DatabaseTrack() { Filename = __filename, PlayCount = __playcount };
+            int newPlays = database.RetrieveOrAddPlayCount(ref track);
 
-            Assert.AreEqual(track.PlayCount, playCount);
+            Assert.AreEqual(track.NewPlays, newPlays);
         }
 
         [Test]
@@ -63,10 +63,21 @@ namespace UnitTests
         {
             const string _tempFilename = @"C:\Filename.mp3";
             const int _newPlays = 3;
-            DatabaseTrack track = new DatabaseTrack() {Filename = _tempFilename, PlayCount = _newPlays};
-            int playcount = database.RetrieveOrAddPlayCount(track);
+            DatabaseTrack track = new DatabaseTrack() { Filename = _tempFilename, PlayCount = _newPlays };
+            int newPlays = database.RetrieveOrAddPlayCount(ref track);
 
-            Assert.AreEqual(track.PlayCount, playcount);
+            Assert.AreEqual(track.NewPlays, newPlays);
+        }
+
+        [Test]
+        public void CheckUpdatedDatabase()
+        {
+            DatabaseTrack track = new DatabaseTrack() { Filename = __filename };
+            database.RetrieveOrAddPlayCount(ref track);
+            track.PlayCount = 3;
+            database.RetrieveOrAddPlayCount(ref track);
+            int playCount = database.GetPlayCount(ref track);
+            Assert.AreEqual(track.PlayCount, playCount);
         }
 
         [Test]
