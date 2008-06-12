@@ -8,9 +8,8 @@ namespace UnitTests
     [TestFixture]
     public class PlayingSongTest
     {
-        private const string __FILENAME = @"C:\song.mp3";
         private const int _LENGTH = 200;
-        private readonly MockTimeProvider _timeProvider = new MockTimeProvider();
+        private MockTimeProvider _timeProvider;
         internal static readonly DateTime _startTime = new DateTime(2008, 6, 6, 0, 0, 0);
 
         private const int _LESSTHANHALFOFFSET = 50;
@@ -18,17 +17,20 @@ namespace UnitTests
 
         private PlayingSong _song;
         private DatabaseTrack _track;
+
         [SetUp]
         public void SetupPlayingSong()
         {
+            _timeProvider = new MockTimeProvider();
 
+            _track = new DatabaseTrack { Length = _LENGTH };
+            _song = new PlayingSong(_track, _timeProvider);
         }
 
         [TestFixtureSetUp]
         public void TestFixtureSetup()
         {
-            _track = new DatabaseTrack { Length = _LENGTH, Filename = __FILENAME };
-            _song = new PlayingSong(_track, _timeProvider);
+
 
         }
 
@@ -91,8 +93,8 @@ namespace UnitTests
             _timeProvider.TimeOffset = _MORETHANHALFOFFSET;
             _song.Stop();
 
-            Assert.AreEqual(true, _song.IsHalfWay);
             Assert.AreEqual(_MORETHANHALFOFFSET, _song.PlayTime);
+            Assert.AreEqual(true, _song.IsHalfWay);
         }
 
         [Test]
